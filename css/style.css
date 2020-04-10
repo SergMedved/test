@@ -1,0 +1,80 @@
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+}
+
+.sub-title {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+.lesson__head {
+  text-align: center;
+  height: 300px;
+  background-color: cadetblue;
+}
+
+.lesson__head::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.box {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.wrapper {
+  height: 100%;
+  overflow: hidden;
+  min-height: 100%;
+  padding: 50px;
+}
+
+.block__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border: 20px solid #ece89d;
+  margin: 0 0 20px 0;
+}
+
+.block__column {
+  border: 20px solid #5e5373;
+}
+
+.block__column_1 {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 5;
+      flex-shrink: 5;
+}
+
+.block__column_2 {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 2;
+      flex-shrink: 2;
+}
+
+.block__item {
+  background-color: #18b5a4;
+  padding: 50px;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
