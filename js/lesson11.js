@@ -405,7 +405,7 @@ let test2_3 = test2Return(test2, 3);
 test2_3();
 console.log(test2_3());
 */
-
+/*
 let person = {
   name: "John",
   age: 25,
@@ -414,3 +414,7 @@ let person = {
 
 console.log(person.age);
 console.log(person.name);
+*/
+
+
+console.log(0 || "" || 2 || undefined || true || falsе);
