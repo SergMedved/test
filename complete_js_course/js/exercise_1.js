@@ -60,7 +60,7 @@ function chooseOptExpenses() {
     let optExp = prompt("Статья необязательных расходов?", "");
     if (optExp == "" || optExp == null) {
       i--;
-    } else appData.optionalExpenses[i] = optExp;
+    } else appData.optionalExpenses[i+1] = optExp;
   }
 }
 
