@@ -51,10 +51,6 @@
       flex-grow: 1;
       flex-shrink: 2;
     }
-    &_3 {
-
-      
-    }
   }
   &__item {
     background-color: #18b5a4;
@@ -64,4 +60,12 @@
     font-weight: 700;
     text-align: center;
   }
+}
+
+.alert {
+  padding: 15px;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  color: #3c763d;
+  background-color: #dff0d8;
 }

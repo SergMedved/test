@@ -1,0 +1,16 @@
+{
+  "bracketPairColorizer.colorMode": "Independent",
+  "bracketPairColorizer.consecutivePairColors": [
+  
+  "()"
+    "()",
+    "[]",
+    "{}",
+    [
+      "Orange",
+      "Orchid",
+      "Blue"
+    ],
+    "Red"
+  ]
+}

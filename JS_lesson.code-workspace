@@ -6,6 +6,13 @@
 	],
 	"settings": {
 		"editor.tabSize": 2,
-		"liveServer.settings.port": 5501
-	}
+		"liveServer.settings.port": 5501,
+		"bracket-pair-colorizer-2.colorMode": "Independent",
+		"bracketPairColorizer.colorMode": "Independent"
+	},
+	"bracket-pair-colorizer-2.colors": [
+		"Orange",
+		"Orchid",
+		"LightSkyBlue"
+	]
 }
