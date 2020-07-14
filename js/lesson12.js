@@ -85,7 +85,111 @@ let data2 = {};
 let container = document.getElementById('container');
 
 function createTree(elem, obj) {
-  if (Object.keys(obj) !== 0) {
+  if (Object.keys(obj).length !== 0) {
+    let ul = document.createElement('ul');
+    elem.append(ul);
     let arrObjKey = Object.keys(obj);
+    arrObjKey.forEach(element => {
+      let li = document.createElement('li');
+      li.innerText = element;
+      elem.lastChild.append(li);
+      if (Object.keys(obj[element]).length !== 0) {
+        createTree(elem.lastChild, obj[element]);
+      } else {
+        return;
+      };
+    });
+  } else {
+    return;
   }
 }
+
+createTree(container, data);
+
+// Выведите список потомков в дереве
+// важность: 5
+// Есть дерево, организованное в виде вложенных списков ul/li.
+
+// Напишите код, который добавит каждому элементу списка <li> количество вложенных в него элементов. Узлы нижнего уровня, без детей – пропускайте.
+
+let tree = document.getElementById('tree');
+function countElemChild(content) {
+  let collectionElem = content.getElementsByTagName('li');
+  console.log(collectionElem);
+  for (let elem of collectionElem) {
+//    console.log(elem);
+    if (elem.getElementsByTagName('li').length > 0) {
+      console.log(elem.getElementsByTagName('li').length);
+      console.log(elem.firstChild);
+      let text = "(" + elem.getElementsByTagName('li').length + ")";
+      console.log(text);
+      elem.firstChild.textContent += text;
+    }
+  };
+  return true;
+}
+
+countElemChild(tree);
+
+// Создайте календарь в виде таблицы
+// важность: 4
+// Напишите функцию createCalendar(elem, year, month).
+
+// Вызов функции должен создать календарь для заданного месяца month в году year и вставить его в elem.
+
+// Календарь должен быть таблицей, где неделя – это <tr>, а день – это <td>. У таблицы должен быть заголовок с названиями дней недели, каждый день – <th>, первым днём недели должен быть понедельник.
+
+// Например, createCalendar(cal, 2012, 9) сгенерирует в cal следующий календарь:
+
+
+
+function createCalendar(elem, year, month) {
+  let daysWeek = ['пн', 'вт', 'ср', 'чт', 'пн', 'сб', 'вс'];
+  let firstDay = new Date(+year, +month, 1);
+  if (firstDay.getDay() == 0) {
+    var calenFirstDay = 7;
+  }
+  else {
+    var calenFirstDay = firstDay.getDay();
+  };
+  let calendar = document.getElementById(elem);
+  let table = document.createElement('table');
+  let tr = document.createElement('tr');
+  let td = document.createElement('td');
+  for (let item of daysWeek) {
+    console.log(item);
+    td = document.createElement('td');
+    td.innerHTML = item;
+    tr.append(td);
+  };
+  table.append(tr);
+  let daysInMonth = 33 - new Date(year, month, 33).getDate();
+  console.log(daysInMonth);
+  let day = 1;
+  while (day <= daysInMonth) {
+    tr = document.createElement('tr');
+    for (let i = 1; i < 8; i++) {
+      console.log(day);
+      if (day > daysInMonth) break;
+      if (i >= calenFirstDay) {
+        calenFirstDay = 1;
+        td = document.createElement('td');
+        td.innerHTML = day;
+        tr.append(td);
+        day++;
+      } else {
+        td = document.createElement('td');
+        td.innerHTML = '_';
+        tr.append(td);
+      };
+    };
+    table.append(tr);
+  };
+
+  console.log(calenFirstDay);
+  calendar.append(table);
+}
+
+
+
+createCalendar('calendar', '2020', '05');

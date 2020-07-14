@@ -80,6 +80,21 @@ let fp = new Proxy(log, {
 
 // Работа с DOM
 
-document.body.style.background = 'red';
+let menu = document.querySelector('.menu');
+let menuItem = document.querySelectorAll('.menu-item');
+let body = document.getElementsByTagName('body');
+let title = document.getElementById('title');
+let adv = document.querySelector('.adv');
 
-setTimeout(() => document.body.style.background = '', 3000);
+menuItem[1].before(menuItem[2]);
+let menuItemLast = document.createElement('li');
+menuItemLast.classList.add('menu-item');
+menuItemLast.innerText = "Пятый пункт";
+menu.append(menuItemLast);
+body[0].style.background = "url(./img/apple_true.jpg) center no-repeat";
+title.innerText = "Мы продаем только подлинную технику Apple";
+adv.remove();
+
+
+let promptApple = document.getElementById('prompt');
+promptApple.innerText = prompt("Ваше отношение к Apple", '');
